@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap');
+
+* {
+  box-sizing: border-box;
+  --block-width: 200px;
+  --block-height: 100px;
+  --line-height: 75px;
+}
+
+html,
+body,
+section {
+  width: 100%;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+section {
+  height: calc(var(--block-height) + var(--line-height));
+}
+
+h2 {
+  text-align: center;
+  margin: 0;
+}
+
+h3 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 40px;
+}
+
+h4 {
+  margin-left: 20px;
+}
+
+hr {
+  background-color: #cacaca;
+  display: block;
+  width: 75px;
+  margin: 0;
+  height: 5px;
+  border: 0;
+}
+
+ul {
+  column-count: 2;
+  font-size: 12px;
+  color: #333;
+  width: 100%;
+}
+
+ul.summary {
+  column-count: 1;
+  font-size: 14px;
+}
+
+.visibilityHidden {
+  visibility: hidden;
+}
+
+section,
+.stepContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stepContainer {
+  width: var(--block-width);
+  height: var(--block-height);
+  border: 4px solid #ff7626;
+  flex-direction: column;
+}
+
+.stepContainer.stepContainer--threeBlocks {
+  width: 675px;
+}
+
+.stepContainer.stepContainer--twoBlocks {
+  width: 375px;
+}
+
+.stepContainer.stepContainer--fiveBlocks {
+  width: 1200px;
+}
+
+.stepContainer.stepContainer--answer {
+  background-color: #f3f3f3;
+}
+
+.stepContainer::before {
+  content: '';
+  position: absolute;
+  border: 4px solid;
+  border-color: #333;
+  border-left-color: transparent;
+  border-top-color: transparent;
+  width: 20px;
+  height: 20px;
+  bottom: calc(var(--line-height) * -1);
+  transform: rotate(45deg);
+}
+
+.stepContainer::after {
+  content: '';
+  background-color: #333;
+  position: absolute;
+  width: 4px;
+  height: var(--line-height);
+  bottom: calc((var(--line-height) + 4px) * -1);
+}
+
+.stepTip {
+  position: absolute;
+  max-width: 200px;
+  line-height: 1.4;
+  right: 10px;
+  border: 3px dashed #eaeaea;
+  padding: 15px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  color: #888;
+}
+
+section:last-of-type .stepContainer::before,
+section:last-of-type .stepContainer::after {
+  display: none;
+}
+
+.outputContainer {
+  margin-top: 75px;
+  border: 3px solid #cacaca;
+}
+
+.outputContainer__roi {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.outputContainer__roi span {
+  color: #ff7626;
+}
