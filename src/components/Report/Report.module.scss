@@ -1,0 +1,140 @@
+.container {
+  width: 100vw;
+}
+
+.chartContainer {
+  height: 400px;
+}
+
+.chart {
+  height: 53px;
+  width: 66px;
+  border: 1px solid transparent;
+  border-left-color: #000;
+  border-bottom-color: #000;
+  position: relative;
+  transform: scale(6) translate(0, 50%);
+  margin: 0 auto;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    opacity: 0.4;
+  }
+
+  &::before {
+    width: 100%;
+    height: 1px;
+    top: 50%;
+    border-top: 1px dashed #cacaca;
+  }
+
+  &::after {
+    width: 1px;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    border-left: 1px dashed #cacaca;
+  }
+}
+
+@keyframes pulsate {
+  0% {transform: scale(0.05, 0.05); opacity: 0.0;}
+  50% {opacity: 1.0;}
+  100% {transform: scale(0.8, 0.8); opacity: 0.0;}
+}
+
+.yourPosition {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  background-color: #ff7626;
+  border-radius: 50%;
+  transform: scale(1.5);
+
+  &::before {
+    content: '';
+    border: 0.5px solid #ff7626;
+    border-radius: 50%;
+    height: 2px;
+    width: 2px;
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    animation: pulsate 1s ease-out;
+    animation-iteration-count: infinite;
+    opacity: 0
+  }
+}
+
+.label {
+  position: absolute;
+  text-transform: uppercase;
+  color: #cacaca;
+  opacity: 0.4;
+
+  &.c {
+    left: 10px;
+    top: 3px;
+  }
+
+  &.d {
+    top: 3px;
+    left: 45px;
+  }
+
+  &.a {
+    left: 10px;
+    top: 29px;
+  }
+
+  &.b {
+    left: 45px;
+    top: 29px;
+  }
+}
+
+.axisLabel {
+  position: absolute;
+  font-size: 3px;
+  font-weight: 700;
+
+  &.x {
+    bottom: -6px;
+    right: 0px;
+  }
+
+  &.y {
+    left: -15px;
+  }
+}
+
+.informationContainer {
+  margin-top: 45px;
+  display: flex;
+  flex-wrap: wrap;
+
+  .column {
+    width: 50%;
+    padding: 0 0 25px 25px;
+  }
+
+  h2 {
+    margin-bottom: 10px;
+
+    &:first-letter {
+      color: #cacaca;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 28px;
+
+    li {
+      line-height: 1.6;
+      font-size: 14px;
+    }
+  }
+}

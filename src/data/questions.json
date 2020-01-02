@@ -1,0 +1,281 @@
+ [
+    {
+      "name": "Ile masz lub chcesz mieć produktów w których istotna jest spójność?",
+      "answers": [
+        {
+          "answer": "1",
+          "returnedData": {
+            "name": "Czy jest to duży projekt?",
+            "answers": [
+              {
+                "answer": "Tak",
+                "returnedData": {
+                  "need": 2,
+                  "maturity": 0
+                }
+              },
+              {
+                "answer": "Nie",
+                "returnedData": {
+                  "need": -5,
+                  "maturity": -5
+                }
+              }
+            ]
+          }
+        },
+        {
+          "answer": "2",
+          "returnedData": {
+            "name": "Czy jest to duży projekt?",
+            "answers": [
+              {
+                "answer": "Tak",
+                "returnedData": {
+                  "need": 5,
+                  "maturity": 2
+                }
+              },
+              {
+                "answer": "Nie",
+                "returnedData": {
+                  "need": 2,
+                  "maturity": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "answer": "3-5",
+          "returnedData": {
+            "need": 9,
+            "maturity": 1
+          }
+        },
+        {
+          "answer": "6+",
+          "returnedData": {
+            "need": 10,
+            "maturity": 2
+          }
+        }
+      ]
+    },
+   {
+     "name": "Czy do zbudowania tych aplikacji korzystasz z zewnętrznych systemów",
+     "answers": [
+       {
+         "answer": "Tak",
+         "returnedData": {
+           "need": 0,
+           "maturity": 0
+         }
+       },
+       {
+         "answer": "Nie",
+         "returnedData": {
+           "need": 0,
+           "maturity": 0
+         }
+       }
+     ]
+   },
+   {
+     "name": "Czy zmagasz się z problemem jednolitości designu / ux w swoich produktach?",
+     "answers": [
+       {
+         "answer": "Tak",
+         "returnedData": {
+           "need": 8,
+           "maturity": 5
+         }
+       },
+       {
+         "answer": "Nie",
+         "returnedData": {
+           "need": -5,
+           "maturity": -5
+         }
+       }
+     ]
+   },
+   {
+     "name": "Czy istotne jest dla Ciebie szybkie reagowanie na zmieniające się potrzeby rynku?\nCzy aplikacja będzie często modifkowana?",
+     "answers": [
+       {
+         "answer": "Tak",
+         "returnedData": {
+           "need": 6,
+           "maturity": 5
+         }
+       },
+       {
+         "answer": "Nie",
+         "returnedData": {
+           "need": -5,
+           "maturity": -3
+         }
+       }
+     ]
+   },
+   {
+     "name": "Jaki jest przewidywany cykl życia aplikacji",
+     "answers": [
+       {
+         "answer": "konkretny cel w ciągu roku",
+         "returnedData": {
+           "need": -5,
+           "maturity": 0
+         }
+       },
+       {
+         "answer": "od roku do 3",
+         "returnedData": {
+           "need": 4,
+           "maturity": 5
+         }
+       },
+       {
+         "answer": "Inwestycja ciągła +5 lat",
+         "returnedData": {
+           "need": 9,
+           "maturity": 8
+         }
+       }
+     ]
+   },
+   {
+     "name": "Jak oceniasz efektywność współpracyTwojego zespołu?",
+     "answers": [
+       {
+         "answer": "Zła",
+         "returnedData": {
+           "need": 5,
+           "maturity": -3
+         }
+       },
+       {
+         "answer": "Neutralnie",
+         "returnedData": {
+           "need": 3,
+           "maturity": 2
+         }
+       },
+       {
+         "answer": "Dobra",
+         "returnedData": {
+           "need": -2,
+           "maturity": 6
+         }
+       }
+     ]
+   },
+   {
+     "name": "Jak oceniasz doświadczenie swojego zespołu?",
+     "answers": [
+       {
+         "answer": "Niskie",
+         "returnedData": {
+           "need": 0,
+           "maturity": -7
+         }
+       },
+       {
+         "answer": "Średnie",
+         "returnedData": {
+           "need": 3,
+           "maturity": 0
+         }
+       },
+       {
+         "answer": "Wysokie",
+         "returnedData": {
+           "need": 3,
+           "maturity": 8
+         }
+       }
+     ]
+   },
+   {
+     "name": "Jakie role występują w Twojej organizacji",
+     "multipleAnswer": true,
+     "answers": [
+       {
+         "answer": "Frontend",
+         "returnedData": {
+           "need": 0,
+           "maturity": 2
+         }
+       },
+       {
+         "answer": "Backend",
+         "returnedData": {
+           "need": 0,
+           "maturity": 2
+         }
+       },
+       {
+         "answer": "Fullstack",
+         "returnedData": {
+           "need": 0,
+           "maturity": 2
+         }
+       },
+       {
+         "answer": "PM",
+         "returnedData": {
+           "need": 0,
+           "maturity": 2
+         }
+       },
+       {
+         "answer": "UX",
+         "returnedData": {
+           "need": 0,
+           "maturity": 2
+         }
+       },
+       {
+         "answer": "Graphic Designer",
+         "returnedData": {
+           "need": 0,
+           "maturity": 2
+         }
+       },
+       {
+         "answer": "BA",
+         "returnedData": {
+           "need": 0,
+           "maturity": 2
+         }
+       },
+       {
+         "answer": "Tester",
+         "returnedData": {
+           "need": 0,
+           "maturity": 2
+         }
+       }
+     ]
+   },
+   {
+     "name": "Czy na dowolnym etapie prac nad produktem przewidujesz pracę z zespołami rozproszonymi?",
+     "answers": [
+       {
+         "answer": "Tak",
+         "returnedData": {
+           "need": 10,
+           "maturity": 0
+         }
+       },
+       {
+         "answer": "Nie",
+         "returnedData": {
+           "need": 0,
+           "maturity": 0
+         }
+       }
+     ]
+   }
+ ]

@@ -1,0 +1,19 @@
+.mainContainer {
+  height: 100%;
+  padding: 10px;
+}
+
+.mainContent {
+  display: flex;
+  height: calc(100% - 70px);
+  align-items: center;
+  justify-content: center;
+}
+
+.helloMessage {
+  text-align: center;
+
+  button {
+    margin-top: 30px;
+  }
+}
