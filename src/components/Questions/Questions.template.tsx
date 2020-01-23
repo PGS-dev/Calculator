@@ -26,10 +26,10 @@ const GenerateAnswers: React.FC<{
 
 const QuestionsTemplate: React.FC<IQuestionsProps> = ({
   question,
-  singleOption,
+  option,
   multipleOptions,
   confirmAnswer,
-  handleSingleOption,
+  handleOption,
   handleMultipleOptions,
   isButtonDisabled,
 }) => (
@@ -45,8 +45,8 @@ const QuestionsTemplate: React.FC<IQuestionsProps> = ({
           key={key}
           index={key}
           answer={answer}
-          className={classNames(classes.answer, key === singleOption ? classes.active : null)}
-          handleOptions={handleSingleOption}
+          className={classNames(classes.answer, key === option ? classes.active : null)}
+          handleOptions={handleOption}
         />
       )}
       {question.multipleAnswer && question.answers.map(({ answer }, key) =>

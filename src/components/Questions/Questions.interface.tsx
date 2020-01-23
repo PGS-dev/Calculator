@@ -14,12 +14,17 @@ export interface IQuestion {
   name: string;
 }
 
+export interface ISelectedAnswer {
+  question: string;
+  answer: string;
+}
+
 interface IQuestionsProps {
   question: IQuestion,
   multipleOptions: Array<number>,
-  singleOption: number,
+  option: number,
   confirmAnswer: Function,
-  handleSingleOption: Function,
+  handleOption: Function,
   handleMultipleOptions: Function,
   isButtonDisabled: () => boolean,
 }

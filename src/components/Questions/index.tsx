@@ -2,20 +2,21 @@ import React, {useState} from 'react';
 import QuestionsTemplate from './Questions.template';
 
 import questionsData from '../../data/questions.json';
-import { IValues, IQuestion} from "./Questions.interface";
-import Report from "../Report";
+import { IValues, IQuestion, ISelectedAnswer } from './Questions.interface';
+import Report from '../Report';
 
 const Questions: React.FC = () =>  {
   const [questionIndex, setQuestionIndex] = useState<number>(0);
-  const [singleOption, setSingleOption] = useState<number>(-1);
+  const [option, setOption] = useState<number>(-1);
   const [need, setNeed] = useState<number>(0);
   const [maturity, setMaturity] = useState<number>(0);
   const [isReportReady, setIsReportReady] = useState<boolean>(false);
   const [multipleOptions, setMultipleOptions] = useState<Array<number>>([]);
   const [question, setQuestion] = useState<IQuestion>(questionsData[questionIndex]);
+  const [selectedAnswers, setSelectedAnswers] = useState<Array<ISelectedAnswer>>([]);
 
-  const handleSingleOption = (selectedOption: number) => {
-    setSingleOption(selectedOption);
+  const handleOption = (selectedOption: number) => {
+    setOption(selectedOption);
   }
 
   const handleMultipleOptions = (selectedOption: number) => {
@@ -29,15 +30,26 @@ const Questions: React.FC = () =>  {
 
   const confirmAnswer = () => {
     if (question.multipleAnswer) {
-      multipleOptions.map((option) => {
+      multipleOptions.forEach((option) => {
         const returnedData: IValues | IQuestion = question.answers[option - 1].returnedData;
+
+        setSelectedAnswers((prevState) => [...prevState, {
+          question: question.name,
+          answer: question.answers[option - 1].answer,
+        }]);
+
         updateValues(returnedData as IValues);
       });
       updateValues(updateValuesFromSilos(multipleOptions.length));
       setMultipleOptions([]);
       goToNextQuestion();
     } else {
-      const returnedData: IValues | IQuestion = question.answers[singleOption].returnedData;
+      const returnedData: IValues | IQuestion = question.answers[option].returnedData;
+
+      setSelectedAnswers((prevState) => [...prevState, {
+        question: question.name,
+        answer: question.answers[option].answer,
+      }]);
 
       if ((returnedData as IQuestion).name) {
         setQuestion(returnedData as IQuestion);
@@ -46,7 +58,7 @@ const Questions: React.FC = () =>  {
         goToNextQuestion();
       }
 
-      setSingleOption(-1);
+      setOption(-1);
     }
   }
 
@@ -67,7 +79,7 @@ const Questions: React.FC = () =>  {
   }
 
   const isButtonDisabled = (): boolean => {
-    return question.multipleAnswer ? multipleOptions === [] : singleOption === -1;
+    return question.multipleAnswer ? multipleOptions === [] : option === -1;
   }
 
   const updateValuesFromSilos = (length: number): IValues => {
@@ -88,15 +100,21 @@ const Questions: React.FC = () =>  {
 
   const props = {
     question,
-    singleOption,
+    option,
     multipleOptions,
     confirmAnswer,
-    handleSingleOption,
+    handleOption,
     handleMultipleOptions,
     isButtonDisabled,
   }
 
-  return isReportReady ? <Report need={need > 0 ? need: 0} maturity={maturity > 0 ? maturity: 0} /> : <QuestionsTemplate {...props} />;
+  return isReportReady 
+    ? <Report 
+        selectedAnswers={selectedAnswers} 
+        need={need > 0 ? need: 0} 
+        maturity={maturity > 0 ? maturity: 0} 
+      /> 
+    : <QuestionsTemplate {...props} />;
 }
 
 export default Questions;

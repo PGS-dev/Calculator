@@ -3,7 +3,7 @@ import {IReportProps} from './Report.interface';
 import classes from './Report.module.scss';
 import classNames from 'classnames';
 
-const Report: React.FC<IReportProps> = ({ maturity, need }) => (
+const Report: React.FC<IReportProps> = ({ maturity, need, selectedAnswers }) => (
   <div className={classes.container}>
     <div className={classes.chartContainer}>
       <div className={classes.chart}>
@@ -54,6 +54,12 @@ const Report: React.FC<IReportProps> = ({ maturity, need }) => (
           <li>Doświadczony zespół</li>
         </ul>
       </div>
+    </div>
+    <div className={classes.answers}>
+      <h2>Odpowiedzi na pytania:</h2>
+      {selectedAnswers.map((data, index) => (
+        <p key={index}><b>{data.question}:</b> {data.answer}</p>
+      ))}
     </div>
   </div>
 );
