@@ -3,15 +3,11 @@ import AppTemplate from './App.template';
 import IAppProps from './App.interface';
 
 const App: React.FC = () => {
-  const [questionsMode, setQuestionsMode] = useState(false);
-
-  const handleSetQuestionsMode = () => {
-    setQuestionsMode(true);
-  };
+  const [welcomeScreen, setWelcomeScreen] = useState(true);
 
   const props: IAppProps = {
-    questionsMode,
-    handleSetQuestionsMode,
+    welcomeScreen,
+    setWelcomeScreen,
   };
 
   return <AppTemplate {...props} />;

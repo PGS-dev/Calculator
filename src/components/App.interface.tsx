@@ -1,7 +1,7 @@
 
 interface IAppProps {
-  questionsMode: boolean;
-  handleSetQuestionsMode: Function;
+  welcomeScreen: boolean;
+  setWelcomeScreen: Function;
 }
 
 export default IAppProps;

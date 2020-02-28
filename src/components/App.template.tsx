@@ -1,21 +1,27 @@
 import React from 'react';
-import Header from './Header';
 import Questions from './Questions';
 import classes from './App.module.scss'
 import IAppProps from './App.interface';
+import src from '../assets/logo.svg';
 
 const AppTemplate: React.FC<IAppProps> = (props) => (
   <div className={classes.mainContainer}>
-    <Header />
+    <header className={classes.headerContainer}>
+      <a href="https://www.pgs-soft.com/" title="PGS Software">
+        <img src={src} alt="logo"/>
+      </a>
+      <p className={classes.title}>Design System <span>Calculator</span></p>
+    </header>
+
     <div className={classes.mainContent}>
       {
-        !props.questionsMode &&
+        props.welcomeScreen &&
         <div className={classes.helloMessage}>
           <h1>Is Design System worth it? Is it suitable for you?</h1>
-          <button onClick={() => props.handleSetQuestionsMode()}>Find Out!</button>
+          <button onClick={() => props.setWelcomeScreen(false)}>Find Out!</button>
         </div>
       }
-      { props.questionsMode && <Questions /> }
+      { !props.welcomeScreen && <Questions /> }
     </div>
   </div>
 );

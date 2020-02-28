@@ -2,7 +2,11 @@
   @section: fonts
 */
 
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap&subset=latin-ext');
+@font-face { font-family: MarkPro-Light; src: url('../assets/fonts/MarkPro-Light.otf'); }
+@font-face { font-family: MarkPro-Bold; src: url('../assets/fonts/MarkPro-Bold.otf'); }
 
 $gui-font-primary: 'Lato';
 $gui-font-secondary: sans-serif;
+
+$gui-header-font-light: MarkPro-Light;
+$gui-header-font-bold: MarkPro-Bold;
