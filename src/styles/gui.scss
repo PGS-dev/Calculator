@@ -2,11 +2,22 @@
   @section: fonts
 */
 
-@font-face { font-family: MarkPro-Light; src: url('../assets/fonts/MarkPro-Light.otf'); }
-@font-face { font-family: MarkPro-Bold; src: url('../assets/fonts/MarkPro-Bold.otf'); }
+@font-face { font-family: MarkPro; font-weight: 300; src: url('../assets/fonts/MarkPro-Light.otf'); }
+@font-face { font-family: MarkPro; font-weight: 700; src: url('../assets/fonts/MarkPro-Bold.otf'); }
+@font-face { font-family: WhitneySSm; font-weight: 300; src: url('../assets/fonts/WhitneySSm-Light-Pro.otf'); }
+@font-face { font-family: WhitneySSm; font-weight: 400; src: url('../assets/fonts/WhitneySSm-Semibold-Pro.otf'); }
+@font-face { font-family: WhitneySSm; font-weight: 700; src: url('../assets/fonts/WhitneySSm-Bold-Pro.otf'); }
 
-$gui-font-primary: 'Lato';
+$gui-font-primary: WhitneySSm;
 $gui-font-secondary: sans-serif;
+$gui-font-header: MarkPro;
 
-$gui-header-font-light: MarkPro-Light;
-$gui-header-font-bold: MarkPro-Bold;
+/*
+  @section: Variables
+*/
+
+$gui-color-main:#ff7626;
+$gui-color-secondary: #ffa273;
+$gui-color-text:#fff;
+
+

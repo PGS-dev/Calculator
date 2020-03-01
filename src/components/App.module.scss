@@ -8,21 +8,21 @@
 .headerContainer {
   display: flex;
   align-items: center;
-  height: 70px;
+  height: 100px;
   max-width: 1200px;
   margin: 0 auto;
 
   .title {
-    font-family: $gui-header-font-bold;
+    font-family: $gui-font-header;
+    font-weight: 700;
     height: 40px;
     line-height: 40px;
     position: relative;
     top: -1px;
-    font-weight: 700;
     font-size: 25px;
 
     span {
-      font-family: $gui-header-font-light;
+      font-weight: 300;
     }
   }
 }
@@ -30,13 +30,31 @@
 .mainContent {
   background: url('../assets/bg_noise.png');
   display: flex;
-  height: calc(100% - 70px);
+  height: calc(100% - 100px);
   align-items: center;
   justify-content: center;
 }
 
 .helloMessage {
-  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 34px;
+    line-height: 1.4;
+  }
+
+  span {
+    display: block;
+    font-size: 22px;
+  }
+
+  img {
+    max-height: 500px;
+  }
 
   button {
     margin-top: 30px;

@@ -3,7 +3,7 @@ import classes from './Questions.module.scss';
 import IQuestionsProps from './Questions.interface';
 import classNames from 'classnames';
 
-const GenerateAnswers: React.FC<{
+const AnswerTemplate: React.FC<{
   index: number,
   className: string,
   handleOptions: Function,
@@ -14,14 +14,12 @@ const GenerateAnswers: React.FC<{
   handleOptions,
   answer
 }) => (
-  <div className={classes.answerContainer}>
-    <div
-      onClick={() => handleOptions(index)}
-      className={className}
-    >
-      <h4>{answer}</h4>
-    </div>
-  </div>
+  <span
+    onClick={() => handleOptions(index)}
+    className={className}
+  >
+    {answer}
+  </span>
 );
 
 const QuestionsTemplate: React.FC<IQuestionsProps> = ({
@@ -33,15 +31,11 @@ const QuestionsTemplate: React.FC<IQuestionsProps> = ({
   handleMultipleOptions,
   isButtonDisabled,
 }) => (
-  <div>
-    <div className={classes.box}>
-      <div className={classes.stepContainer}>
-        <h2 className={classes.title}>{question.name}</h2>
-      </div>
-    </div>
-    <div className={classes.box}>
+  <div className={classes.question}>
+    <h2 className={classes.title}>{question.name}</h2>
+    <div className={classes.answerContainer}>
       {!question.multipleAnswer && question.answers.map(({ answer }, key) =>
-        <GenerateAnswers
+        <AnswerTemplate
           key={key}
           index={key}
           answer={answer}
@@ -50,7 +44,7 @@ const QuestionsTemplate: React.FC<IQuestionsProps> = ({
         />
       )}
       {question.multipleAnswer && question.answers.map(({ answer }, key) =>
-        <GenerateAnswers
+        <AnswerTemplate
           key={key}
           index={key + 1}
           answer={answer}

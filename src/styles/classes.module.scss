@@ -1,0 +1,6 @@
+@import 'gui';
+@import 'modules/buttons';
+
+.button {
+  @include buttonModule;
+}

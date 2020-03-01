@@ -1,0 +1,24 @@
+
+@mixin buttonModule() {
+  font-family: $gui-font-primary;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: none;
+  color: $gui-color-main;
+  cursor: pointer;
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+
+  &.primary {
+    background: $gui-color-main;
+    color: $gui-color-text;
+    padding: 10px 36px;
+
+    &:hover {
+      background-color: $gui-color-secondary;
+    }
+  }
+}
