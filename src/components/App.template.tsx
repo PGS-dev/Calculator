@@ -18,7 +18,7 @@ const AppTemplate: React.FC<IAppProps> = (props) => (
         props.welcomeScreen &&
         <div className={classes.helloMessage}>
           <h1>Is Design System worth it? Is it suitable for you?</h1>
-          <button onClick={() => props.setWelcomeScreen(false)}>Find Out!</button>
+          <button onClick={() => props.setWelcomeScreen(false)} className={classes.buttonPrimary}>Find Out!</button>
         </div>
       }
       { !props.welcomeScreen && <Questions /> }
