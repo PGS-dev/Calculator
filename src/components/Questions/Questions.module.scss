@@ -19,19 +19,88 @@
 
 .answerContainer {
   margin-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1024px;
 
-  span {
+  .answer {
+    margin-bottom: 25px;
+    margin-left: 25px;
     text-align: center;
     display: inline-block;
-    width: 250px;
+    width: 225px;
     font-weight: 300;
     font-size: 28px;
+
+    &:first-child {
+      margin-left: 0;
+    }
 
     &.active,
     &:hover {
       cursor: pointer;
       color: $gui-color-main;
     }
+  }
+}
+
+input[type=range]::-moz-range-thumb {
+  height: 30px;
+  width: 15px;
+  border-radius: 4px;
+  background-color: #000;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+.rangeAnswer {
+  @mixin thumbStyle {
+    height: 30px;
+    width: 15px;
+    border-radius: 4px;
+    background-color: #000;
+    cursor: pointer;
+    -webkit-appearance: none;
+  }
+
+  width: 600px;
+  position: relative;
+
+  .rangeLabels {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 15px;
+    
+    span {
+      font-size: 20px;
+    }
+  }
+
+  input[type=range] {
+    background-color: $gui-color-main;
+    border-radius: 4px;
+    height: 10px;
+    -webkit-appearance: none;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    @include thumbStyle;
+  }
+
+  input[type=range]::-moz-range-thumb {
+    @include thumbStyle;
+  }
+
+  input[type=range]::-ms-thumb {
+    @include thumbStyle;
   }
 }
 

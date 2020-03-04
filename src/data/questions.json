@@ -28,19 +28,27 @@
           "answer": "2",
           "returnedData": {
             "name": "Czy jest to duży projekt?",
+            "rangeAnswer": true,
             "answers": [
               {
-                "answer": "Tak",
-                "returnedData": {
-                  "need": 5,
-                  "maturity": 2
-                }
-              },
-              {
-                "answer": "Nie",
+                "answer": "Mały",
                 "returnedData": {
                   "need": 2,
                   "maturity": 0
+                }
+              },
+              {
+                "answer": "Normalny",
+                "returnedData": {
+                  "need": 2,
+                  "maturity": 0
+                }
+              },
+              {
+                "answer": "Duży",
+                "returnedData": {
+                  "need": 5,
+                  "maturity": 2
                 }
               }
             ]

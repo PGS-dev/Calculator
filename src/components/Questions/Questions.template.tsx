@@ -24,7 +24,6 @@ const AnswerTemplate: React.FC<{
 
 const QuestionsTemplate: React.FC<IQuestionsProps> = ({
   question,
-  option,
   multipleOptions,
   confirmAnswer,
   handleOption,
@@ -34,16 +33,35 @@ const QuestionsTemplate: React.FC<IQuestionsProps> = ({
   <div className={classes.question}>
     <h2 className={classes.title}>{question.name}</h2>
     <div className={classes.answerContainer}>
-      {!question.multipleAnswer && question.answers.map(({ answer }, key) =>
+      {question.rangeAnswer &&
+        <div className={classes.rangeAnswer}>
+          <input
+            type="range" 
+            min="0" 
+            max={question.answers.length - 1}
+            step="1"
+          />
+          <div className={classes.rangeLabels}>
+            {question.answers.map(({ answer }, key) =>
+              <span 
+                key={key}
+              >
+                {answer}
+              </span>
+            )}
+          </div>
+        </div>
+      }
+      {!question.rangeAnswer && !question.multipleAnswer && question.answers.map(({ answer }, key) =>
         <AnswerTemplate
           key={key}
           index={key}
           answer={answer}
-          className={classNames(classes.answer, key === option ? classes.active : null)}
+          className={classes.answer}
           handleOptions={handleOption}
         />
       )}
-      {question.multipleAnswer && question.answers.map(({ answer }, key) =>
+      {!question.rangeAnswer && question.multipleAnswer && question.answers.map(({ answer }, key) =>
         <AnswerTemplate
           key={key}
           index={key + 1}
@@ -58,7 +76,8 @@ const QuestionsTemplate: React.FC<IQuestionsProps> = ({
         />
       )}
     </div>
-    <button className={classes.button} disabled={isButtonDisabled()} onClick={() => confirmAnswer()}>next</button>
+    {question.multipleAnswer && <button className={classes.button} disabled={isButtonDisabled()} onClick={() => confirmAnswer()}>next</button>}
+    {question.rangeAnswer && <button className={classes.button} disabled={isButtonDisabled()} onClick={() => confirmAnswer()}>next</button>}
   </div>
 );
 

@@ -10,6 +10,7 @@ export interface IValues {
 
 export interface IQuestion {
   multipleAnswer?: boolean;
+  rangeAnswer?: boolean;
   answers: Array<IAnswer>;
   name: string;
 }
@@ -22,7 +23,6 @@ export interface ISelectedAnswer {
 interface IQuestionsProps {
   question: IQuestion,
   multipleOptions: Array<number>,
-  option: number,
   confirmAnswer: Function,
   handleOption: Function,
   handleMultipleOptions: Function,

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import QuestionsTemplate from './Questions.template';
 
 import questionsData from '../../data/questions.json';
@@ -7,7 +7,6 @@ import Report from '../Report';
 
 const Questions: React.FC = () =>  {
   const [questionIndex, setQuestionIndex] = useState<number>(0);
-  const [option, setOption] = useState<number>(-1);
   const [need, setNeed] = useState<number>(0);
   const [maturity, setMaturity] = useState<number>(0);
   const [isReportReady, setIsReportReady] = useState<boolean>(false);
@@ -16,7 +15,7 @@ const Questions: React.FC = () =>  {
   const [selectedAnswers, setSelectedAnswers] = useState<Array<ISelectedAnswer>>([]);
 
   const handleOption = (selectedOption: number) => {
-    setOption(selectedOption);
+    confirmAnswer(selectedOption);
   }
 
   const handleMultipleOptions = (selectedOption: number) => {
@@ -28,7 +27,7 @@ const Questions: React.FC = () =>  {
     }
   }
 
-  const confirmAnswer = () => {
+  const confirmAnswer = (option: number = 0) => {
     if (question.multipleAnswer) {
       multipleOptions.forEach((option) => {
         const returnedData: IValues | IQuestion = question.answers[option - 1].returnedData;
@@ -57,8 +56,6 @@ const Questions: React.FC = () =>  {
         updateValues(returnedData as IValues);
         goToNextQuestion();
       }
-
-      setOption(-1);
     }
   }
 
@@ -79,7 +76,7 @@ const Questions: React.FC = () =>  {
   }
 
   const isButtonDisabled = (): boolean => {
-    return question.multipleAnswer ? multipleOptions === [] : option === -1;
+    return multipleOptions === [];
   }
 
   const updateValuesFromSilos = (length: number): IValues => {
@@ -100,7 +97,6 @@ const Questions: React.FC = () =>  {
 
   const props = {
     question,
-    option,
     multipleOptions,
     confirmAnswer,
     handleOption,
