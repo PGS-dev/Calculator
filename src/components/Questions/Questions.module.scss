@@ -15,6 +15,35 @@
   margin: 0;
   width: 100%;
   max-width: 700px;
+  position: relative;
+
+  span {
+    z-index: 10;
+    position: relative;
+  }
+
+  .cloudImg {
+    position: absolute;
+    top: 50%;
+
+    &.bigCloudPos {
+      right: 0;
+      max-width: 300px;
+      transform: translate(50%, -50%);
+    }
+
+    &.smallCloudPos {
+      right: 0;
+      max-width: 150px;
+      transform: translate(50%, -50%);
+    }
+
+    &.smallCloudPosLeft {
+      left: 0;
+      max-width: 150px;
+      transform: translate(-50%, -50%);
+    }
+  }
 }
 
 .answerContainer {
@@ -104,14 +133,8 @@ input[type=range]::-moz-range-thumb {
   }
 }
 
-.button {
-  display: block;
-  margin: 0 auto;
-  width: 100px;
-  height: 30px;
-  font-weight: 700;
-
-  &:disabled {
-    opacity: 0.5;
-  }
+.greyedLabel {
+  color: $gui-color-grey;
+  font-weight: 300;
+  font-size: 18px;
 }

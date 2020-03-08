@@ -1,10 +1,13 @@
+@import '../../styles/gui';
+
 .container {
   width: 100vw;
   height: 100%;
 }
 
 .chartContainer {
-  height: 400px;
+  height: 215px;
+  width: 265px;
 }
 
 .chart {
@@ -14,14 +17,12 @@
   border-left-color: #000;
   border-bottom-color: #000;
   position: relative;
-  transform: scale(6) translate(0, 50%);
+  transform: scale(4) translate(0, 50%);
   margin: 0 auto;
 
-  &::before,
-  &::after {
+  &::before {
     content: '';
     position: absolute;
-    opacity: 0.4;
   }
 
   &::before {
@@ -31,12 +32,57 @@
     border-top: 1px dashed #cacaca;
   }
 
-  &::after {
-    width: 1px;
+  .curvedLine {
+    position: absolute;
+    width: 100%;
     height: 100%;
-    left: 50%;
-    top: 0;
-    border-left: 1px dashed #cacaca;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 1px;
+      height: 50%;
+      left: 50%;
+      width: 100%;
+      max-width: 125px;
+    }
+  
+    &::before {
+      top: 0;
+      border-left: 1px dashed #cacaca;
+      border-radius: 50% / 55px 0 0 0;
+      transform: rotateY(-180deg) translateX(64px);
+    }
+  
+    &::after {
+      bottom: 0;
+      border-left: 1px dashed #cacaca;
+      border-radius: 0 0 0 55% / 30px;
+    }
+  }
+}
+
+.titleContainer {
+  align-items: flex-end;
+
+  > div:last-child {
+    margin-left: 200px;
+  }
+
+  h1 {
+    font-size: 34px;
+    line-height: 1.4;
+
+    p {
+      color: $gui-color-main;
+    }
+  }
+
+  .subTitle {
+    display: block;
+    font-size: 22px;
+    font-weight: 700;
   }
 }
 
@@ -73,41 +119,27 @@
   position: absolute;
   text-transform: uppercase;
   color: #cacaca;
-  opacity: 0.4;
+  font-weight: 300;
+  font-size: 12px;
 
   &.c {
-    left: 10px;
-    top: 3px;
+    left: 11px;
+    top: 5px;
   }
 
   &.d {
-    top: 3px;
-    left: 45px;
+    top: 4px;
+    left: 47px;
   }
 
   &.a {
-    left: 10px;
-    top: 29px;
+    left: 11px;
+    top: 31px;
   }
 
   &.b {
-    left: 45px;
-    top: 29px;
-  }
-}
-
-.axisLabel {
-  position: absolute;
-  font-size: 3px;
-  font-weight: 700;
-
-  &.x {
-    bottom: -6px;
-    right: 0px;
-  }
-
-  &.y {
-    left: -15px;
+    left: 46px;
+    top: 31px;
   }
 }
 
@@ -141,12 +173,30 @@
 }
 
 .answers {
+  margin-left: 200px;
+
   h2 {
     margin-bottom: 20px;
   }
 
   p {
-    line-height: 1.6;
-    font-size: 14px;
+    line-height: 1.8;
+    color: $gui-color-grey-secondary;    
+    font-size: 12px;
+    font-weight: 300;
+
+    b {
+      color: #000;
+    }
+  }
+}
+
+.row {
+  display: flex;
+  width: 1024px;
+  margin: 50px auto 0 ;
+
+  > div:first-child {
+    width: 265px;
   }
 }

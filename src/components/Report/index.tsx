@@ -5,21 +5,42 @@ import classNames from 'classnames';
 
 const Report: React.FC<IReportProps> = ({ maturity, need, selectedAnswers }) => (
   <div className={classes.container}>
-    <div className={classes.chartContainer}>
-      <div className={classes.chart}>
-        <span
-          className={classes.yourPosition}
-          style={{bottom: `${maturity}px`, left: `${need}px`}}
-        ></span>
-        <span className={classNames(classes.label, classes.c)}>c</span>
-        <span className={classNames(classes.label, classes.d)}>d</span>
-        <span className={classNames(classes.label, classes.a)}>a</span>
-        <span className={classNames(classes.label, classes.b)}>b</span>
-        <span className={classNames(classes.axisLabel, classes.x)}>Need</span>
-        <span className={classNames(classes.axisLabel, classes.y)}>Maturity</span>
+    <div className={classNames(classes.row, classes.titleContainer)}>
+      <div>
+        <h1>
+          Raport
+          <p className={classes.subTitle}>Dojrzały procesowo</p>
+        </h1>
+      </div>
+      <div>
+        <p className={classes.subTitle}>Odpowiedzi na pytania</p>
       </div>
     </div>
-    <div className={classes.informationContainer}>
+    <div className={classes.row}>
+      <div>
+        <div className={classes.chartContainer}>
+          <div className={classes.chart}>
+            <span
+              className={classes.yourPosition}
+              style={{bottom: `${maturity}px`, left: `${need}px`}}
+            ></span>
+            <span className={classNames(classes.label, classes.c)}>c</span>
+            <span className={classNames(classes.label, classes.d)}>d</span>
+            <span className={classNames(classes.label, classes.a)}>a</span>
+            <span className={classNames(classes.label, classes.b)}>b</span>
+            <span className={classes.curvedLine}></span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div className={classes.answers}>
+          {selectedAnswers.map((data, index) => (
+            <p key={index}>{index + 1}. {data.question}: <b>{data.answer}</b></p>
+          ))}
+        </div>
+      </div>
+    </div>
+    {/* <div className={classes.informationContainer}>
       <div className={classes.column}>
         <h2>A: Nie potrzebuje lub nie jest gotowy</h2>
         <ul>
@@ -54,13 +75,7 @@ const Report: React.FC<IReportProps> = ({ maturity, need, selectedAnswers }) => 
           <li>Doświadczony zespół</li>
         </ul>
       </div>
-    </div>
-    <div className={classes.answers}>
-      <h2>Odpowiedzi na pytania:</h2>
-      {selectedAnswers.map((data, index) => (
-        <p key={index}><b>{data.question}:</b> {data.answer}</p>
-      ))}
-    </div>
+    </div> */}
   </div>
 );
 

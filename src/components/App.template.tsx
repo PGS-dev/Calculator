@@ -1,11 +1,9 @@
 import React from 'react';
-import classNames from 'classnames';
 import Questions from './Questions';
 import classes from './App.module.scss'
 import IAppProps from './App.interface';
-import { default as guiClass } from '../styles/classes.module.scss';
+import WelcomeScreen from './Screens/Welcome.template';
 import { default as logoSrc } from '../assets/logo.svg';
-import { default as blocksSrc } from '../assets/gfx_blocks.png';
 
 const AppTemplate: React.FC<IAppProps> = (props) => (
   <div className={classes.mainContainer}>
@@ -17,21 +15,7 @@ const AppTemplate: React.FC<IAppProps> = (props) => (
     </header>
 
     <div className={classes.mainContent}>
-      {
-        props.welcomeScreen &&
-        <div className={classes.helloMessage}>
-          <div>
-            <h1>Is Design System worth it?<span>Is it suitable for you?</span></h1>
-            <button 
-              onClick={() => props.setWelcomeScreen(false)} 
-              className={classNames(guiClass.button, guiClass.primary)}
-            >
-              Find Out
-            </button>
-          </div>
-          <img src={blocksSrc} alt=""/>
-        </div>
-      }
+      { props.welcomeScreen && <WelcomeScreen handleScreen={props.setWelcomeScreen} />}
       { !props.welcomeScreen && <Questions /> }
     </div>
   </div>

@@ -4,12 +4,14 @@ import QuestionsTemplate from './Questions.template';
 import questionsData from '../../data/questions.json';
 import { IValues, IQuestion, ISelectedAnswer } from './Questions.interface';
 import Report from '../Report';
+import ReportReadyScreen from '../Screens/ReportReady.template';
 
 const Questions: React.FC = () =>  {
   const [questionIndex, setQuestionIndex] = useState<number>(0);
   const [need, setNeed] = useState<number>(0);
   const [maturity, setMaturity] = useState<number>(0);
   const [isReportReady, setIsReportReady] = useState<boolean>(false);
+  const [reportPreview, setReportPreview] = useState<boolean>(false);
   const [multipleOptions, setMultipleOptions] = useState<Array<number>>([]);
   const [question, setQuestion] = useState<IQuestion>(questionsData[questionIndex]);
   const [selectedAnswers, setSelectedAnswers] = useState<Array<ISelectedAnswer>>([]);
@@ -76,7 +78,7 @@ const Questions: React.FC = () =>  {
   }
 
   const isButtonDisabled = (): boolean => {
-    return multipleOptions === [];
+    return multipleOptions.length === 0;
   }
 
   const updateValuesFromSilos = (length: number): IValues => {
@@ -104,13 +106,19 @@ const Questions: React.FC = () =>  {
     isButtonDisabled,
   }
 
-  return isReportReady 
-    ? <Report 
-        selectedAnswers={selectedAnswers} 
-        need={need > 0 ? need: 0} 
-        maturity={maturity > 0 ? maturity: 0} 
-      /> 
-    : <QuestionsTemplate {...props} />;
+  if (reportPreview) {
+    return <Report 
+      selectedAnswers={selectedAnswers} 
+      need={need > 0 ? need: 0} 
+      maturity={maturity > 0 ? maturity: 0} 
+    />;
+  }
+
+  if (isReportReady) {
+    return <ReportReadyScreen handleScreen={setReportPreview} />
+  }
+
+  return <QuestionsTemplate {...props} />;
 }
 
 export default Questions;
