@@ -47,29 +47,34 @@
 }
 
 .answerContainer {
-  margin-top: 25px;
+  margin-top: 50px;
   display: flex;
+  flex-direction: row;
+  max-width: 350px;
   flex-wrap: wrap;
-  align-items: center;
-  max-width: 1024px;
+  justify-content: space-between;
+  
+  &.twoColumns {
+    max-width: 725px;
+  }
 
   .answer {
+    border: 2px solid $gui-color-grey;
+    border-radius: 5px;
     margin-bottom: 25px;
-    margin-left: 25px;
+    padding: 10px 30px;
     text-align: center;
-    display: inline-block;
-    width: 225px;
+    display: block;
+    min-width: 350px;
     font-weight: 300;
-    font-size: 28px;
-
-    &:first-child {
-      margin-left: 0;
-    }
+    font-size: 25px;
+    transition: border-color .1s, color .1s;
 
     &.active,
     &:hover {
       cursor: pointer;
       color: $gui-color-main;
+      border-color: $gui-color-main;
     }
   }
 }
@@ -136,5 +141,12 @@ input[type=range]::-moz-range-thumb {
 .greyedLabel {
   color: $gui-color-grey;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 17px;
+  margin: 20px 0;
+}
+
+.buttonsContainer {
+  display: flex;
+  width: 250px;
+  justify-content: space-around;
 }

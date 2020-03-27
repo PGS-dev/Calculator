@@ -1,6 +1,7 @@
+import { ISelectedValues } from "../Questions/Questions.interface";
+
 export interface IReportProps {
-  need: number;
-  maturity: number;
+  selectedValues: Array<ISelectedValues>;
   selectedAnswers: Array<{
     question: string;
     answer: string;

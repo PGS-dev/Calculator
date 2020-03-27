@@ -9,9 +9,10 @@
 html,
 body,
 #root {
-  height: 100%;
+  height: 100vh;
 }
 
 body {
+  background: url('../assets/bg_noise.png');
   font-family: $gui-font-primary, $gui-font-secondary;
 }

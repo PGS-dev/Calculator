@@ -3,7 +3,7 @@ import AppTemplate from './App.template';
 import IAppProps from './App.interface';
 
 const App: React.FC = () => {
-  const [welcomeScreen, setWelcomeScreen] = useState(true);
+  const [welcomeScreen, setWelcomeScreen] = useState(false);
 
   const props: IAppProps = {
     welcomeScreen,

@@ -1,0 +1,41 @@
+{
+  "explanations": [
+    {
+      "title": "yes",
+      "desc": "We believe it's worth for you to further explore Design Systems as your organization seems to be capable of handling the process well. Based on your answers it seems likely that you do have the need to keep your user experience and/or brand consistent in terms of how your customers perceive it and interact with it. As your products and/or services mature the complexity of the delivery process increases considerably, and that's where introducing a Design System is likely to have the biggest impact. Your team is likely to be at a stage when introducing a design system will help them communicate more effectively and never loose sight of what's most important - your end users and their satisfaction. A design system is, above all, a work methodology which, when introduced in the right way, helps you structure work better at different levels, starting from unifying and clarifying the language used, through to structuring your delivery processes and ending up with a clearer, better structure application which looks, feels and behaves more consistently. Your score suggests that your organization is mature (or on the right path to becoming mature) and you are likely to be facing the kind of challanges that a Design System can help with."
+    },
+    {
+      "title": "maybeLNHM",
+      "desc": "This could work out. Your score suggests your organization is either already mature or getting there and you are likely facing a whole range of new challanges. That said, we are not sure there are enough areas in your organization that design system would help improve. Any investment you make in a Design System should be backed by a business case. Our advise is that you do try out Design Systems, but do so carefully and gradually. Start small, e.g. by introducing a shared styleguide with standarized colors, typography and icons. Avoid sending designs over email. Set up a single place to store designs, such as Dropbox or Zeplin, instead. Most importantly, define your success metrics and keep an eye on them as you introduce changes. This will help you prevent any investment that may not be right for you."
+    },
+    {
+      "title": "maybeHNLM",
+      "desc": "This could work out. Even though your score suggests that your organization is at an early to mid stage of development you are already likely to be facing some communication challanges resulting in a lack of consistency across your products, which is exactly what a Design System can help you fix. At the same time your score suggests that in terms of processes, your company may not be ready for a fully-fledged implementation of a Design System. It is likely that a Design System would be beneficial, but you need to be carefull not to overinvest. Any investemnt in a Design System should be backed by a business case. Our advise is that you do try out Design Systems, but do so carefully and gradually. Start small, e.g. by introducing a shared styleguide with standarized colors, typography and icons. Avoid sending designs over email. Set up a single place to store designs, such as Dropbox or Zeplin, instead. Most importantly, define your success metrics and keep an eye on them as you introduce changes. This will help you prevent any investment that may not be right for you."
+    },
+    {
+      "title": "no",
+      "desc": "Your score suggests that Design Systems may not be what you need and we would advise against implementing a full Design System at this stage. Your comapny seems to be and an early stage of development. Even though you may already be facing the kind of communication problems in your team that result in an incosistent product, a fully-fledged Design System would only make that communication even more complex. A Design System would be an overkill. If any elements of the Design System methodology sound like something that you could benefit from, do go ahead and try them but do so one at a time. Start with the simpler techniques that will help you build a strong foundation for further growth. For example, you could start by creating a central repository for your designs and organizing a meeting for your team members to agree on what language you use to describe your design artefacts. There are many more techniques you could try, give us a shout and we will share our knowledge gladly. "
+    }
+  ],
+  "suggestions": [
+    { "name": "Reguły upraszczające poruszanie się między projektami i zespołami", "titles": ["yes", "maybeHNLM", "maybeHNLM"] },
+    { "name": "Jasne i czytelne flow dostarczenia nowych funkcjonalności do projektu", "titles": ["yes", "maybeHNLM", "maybeHNLM"] },
+    { "name": "Możliwość współdzielenia komponentów", "titles": ["yes", "maybeHNLM", "no"] },
+    { "name": "Zmniejszony koszt utrzymania projektu/ów", "titles": ["yes", "maybeHNLM"] },
+    { "name": "Standardy dostarczania rozwiązań designerskich pod konkretne narzędzie", "titles": ["yes", "maybeHNLM", "maybeHNLM"] },
+    { "name": "Poprawienie komunikacji międzyzespołowej", "titles": ["yes", "maybeHNLM"] },
+    { "name": "Wybranie rozwiązań oraz narzędzi mających na celu uproszczenie procesu dostarczania nowych funkcjonalności", "titles": ["yes", "maybeHNLM"] },
+    { "name": "Wsparcie firmy w postaci szkoleń", "titles": ["yes", "maybeHNLM", "no"] },
+    { "name": "Przygotowanie zespołu do pracy z Design Systemami przez doświadczonego", "titles": ["yes", "maybeHNLM", "maybeHNLM"] },
+    { "name": "Wykorzystanie rozwiązania Atomic Design (Bezkonfliktowe rozbudowywanie komponentów)", "titles": ["yes", "maybeHNLM", "no"] },
+    { "name": "Dobór narzędzi mających jak najlepiej wspomóc pracę zespołu na czas realizacji projektu", "titles": ["yes", "maybeHNLM", "maybeHNLM"] },
+    { "name": "Wsparcie mentora jako osoby wskazującej kierunek prac i możliwości na rozwiązywanie problemów", "titles": ["yes", "maybeHNLM", "maybeHNLM"] },
+    { "name": "Poprawienie komunikacji międzyzespołowej", "titles": ["yes", "maybeHNLM"] },
+    { "name": "Zwiększenie efektywności pracy", "titles": ["yes", "maybeHNLM", "maybeHNLM"] },
+    { "name": "Ustandaryzowanie procesu dostarczania nowych funkcjonalności (proces akceptcyjny)", "titles": ["yes", "maybeHNLM", "maybeHNLM"] },
+    { "name": "Zmniejszony koszt wdrożenia aplikacji oraz dalszego utrzymania", "titles": ["yes", "maybeHNLM"] },
+    { "name": "Dostarczenie nowych rozwiązań technologicznych", "titles": ["yes", "maybeHNLM", "no"] }
+  ]
+}
+
+        

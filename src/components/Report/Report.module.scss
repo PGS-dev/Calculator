@@ -1,80 +1,19 @@
 @import '../../styles/gui';
 
+//   height: 53px;
+//   width: 66px;
+
 .container {
   width: 100vw;
   height: 100%;
 }
 
-.chartContainer {
-  height: 215px;
-  width: 265px;
-}
-
-.chart {
-  height: 53px;
-  width: 66px;
-  border: 1px solid transparent;
-  border-left-color: #000;
-  border-bottom-color: #000;
-  position: relative;
-  transform: scale(4) translate(0, 50%);
-  margin: 0 auto;
-
-  &::before {
-    content: '';
-    position: absolute;
-  }
-
-  &::before {
-    width: 100%;
-    height: 1px;
-    top: 50%;
-    border-top: 1px dashed #cacaca;
-  }
-
-  .curvedLine {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      width: 1px;
-      height: 50%;
-      left: 50%;
-      width: 100%;
-      max-width: 125px;
-    }
-  
-    &::before {
-      top: 0;
-      border-left: 1px dashed #cacaca;
-      border-radius: 50% / 55px 0 0 0;
-      transform: rotateY(-180deg) translateX(64px);
-    }
-  
-    &::after {
-      bottom: 0;
-      border-left: 1px dashed #cacaca;
-      border-radius: 0 0 0 55% / 30px;
-    }
-  }
-}
-
 .titleContainer {
-  align-items: flex-end;
-
-  > div:last-child {
-    margin-left: 200px;
-  }
-
   h1 {
     font-size: 34px;
     line-height: 1.4;
 
-    p {
+    span {
       color: $gui-color-main;
     }
   }
@@ -86,94 +25,9 @@
   }
 }
 
-@keyframes pulsate {
-  0% {transform: scale(0.05, 0.05); opacity: 0.0;}
-  50% {opacity: 1.0;}
-  100% {transform: scale(0.8, 0.8); opacity: 0.0;}
-}
-
-.yourPosition {
-  width: 1px;
-  height: 1px;
-  position: absolute;
-  background-color: #ff7626;
-  border-radius: 50%;
-  transform: scale(1.5);
-
-  &::before {
-    content: '';
-    border: 0.5px solid #ff7626;
-    border-radius: 50%;
-    height: 2px;
-    width: 2px;
-    position: absolute;
-    left: -1px;
-    top: -1px;
-    animation: pulsate 1s ease-out;
-    animation-iteration-count: infinite;
-    opacity: 0
-  }
-}
-
-.label {
-  position: absolute;
-  text-transform: uppercase;
-  color: #cacaca;
-  font-weight: 300;
-  font-size: 12px;
-
-  &.c {
-    left: 11px;
-    top: 5px;
-  }
-
-  &.d {
-    top: 4px;
-    left: 47px;
-  }
-
-  &.a {
-    left: 11px;
-    top: 31px;
-  }
-
-  &.b {
-    left: 46px;
-    top: 31px;
-  }
-}
-
-.informationContainer {
-  margin-top: 45px;
-  display: flex;
-  flex-wrap: wrap;
-
-  .column {
-    width: 50%;
-    padding: 0 0 25px 25px;
-  }
-
-  h2 {
-    margin-bottom: 10px;
-
-    &:first-letter {
-      color: #cacaca;
-    }
-  }
-
-  ul {
-    list-style-type: none;
-    padding-left: 28px;
-
-    li {
-      line-height: 1.6;
-      font-size: 14px;
-    }
-  }
-}
-
 .answers {
-  margin-left: 200px;
+  width: 1024px;
+  margin: 50px auto;
 
   h2 {
     margin-bottom: 20px;
@@ -196,7 +50,133 @@
   width: 1024px;
   margin: 50px auto 0 ;
 
-  > div:first-child {
-    width: 265px;
+  > div {
+    width: 50%;
   }
+  
+  .centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.cardsContainer {
+  position: relative;
+  height: 350px;
+  max-width: 460px;
+  width: 100%;
+  margin-top: 100px;
+  
+  > p {
+    background-color: $gui-color-white;
+    width: 48%;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    box-shadow: 1px -1px 2px $gui-color-grey, -1px 0px 2px $gui-color-grey;
+    
+    &.active {
+      box-shadow: none;
+      background-color: $gui-color-main;
+      color: $gui-color-white;
+    };
+  }
+  
+  .cardNotReady {
+    height: 49%;
+    left: 0;
+    z-index: 5;
+  }
+  
+  .cardNeeded {
+    height: 66%;
+    left: 16%;
+    z-index: 4;
+  }
+  
+  .cardReadyToApply {
+    height: 83%;
+    left: 32%;
+    z-index: 3;
+  }
+  
+  .cardDemanded {
+    height: 100%;
+    left: 48%;
+    z-index: 2;
+  }
+}
+
+.impactScoreContainer {
+  h2 {
+    font-size: 28px;
+    line-height: 1.4;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  
+  .circle {
+    position: relative;
+    
+    .circleProgress {
+      transition: stroke-dashoffset 2s;
+      transform: rotate(-90deg);
+      transform-origin: 50%;
+    }
+    
+    span {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 48%;
+      left: 50%;
+      font-size: 45px;
+    }
+  }
+}
+
+.sectionTitle {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.explanation {
+  background-color: $gui-color-white;
+  border: 2px solid $gui-color-grey;
+  font-size: 14px;
+  font-weight: 300;
+  padding: 10px;
+  line-height: 1.6;
+}
+
+.benefitsContainer {
+  column-count: 2;
+  width: 1024px;
+  margin: 50px auto 0;
+  list-style-type: none;
+  line-height: 2.4;
+  font-size: 14px;
+  
+  li::before {
+    content: '\25A0';
+    color: $gui-color-main; 
+    display: inline-block;
+    width: 16px;
+    margin-left: -16px;
+  }
+}
+
+.image {
+  width: 300px;
+}
+
+.scrollBaner {
+  background-color: $gui-color-white;
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
 }

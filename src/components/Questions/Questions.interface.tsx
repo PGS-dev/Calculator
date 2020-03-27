@@ -20,13 +20,25 @@ export interface ISelectedAnswer {
   answer: string;
 }
 
+export interface ISelectedValues {
+  index: number;
+  selectedOption: number | Array<number>;
+  values: IValues | Array<IValues>;
+  silos?: IValues;
+}
+
 interface IQuestionsProps {
   question: IQuestion,
+  option: number;
+  totalQuestions: number;
+  questionNumber: number;
   multipleOptions: Array<number>,
   confirmAnswer: Function,
   handleOption: Function,
   handleMultipleOptions: Function,
-  isButtonDisabled: () => boolean,
+  handlePrevQuestion: Function,
+  isNextButtonDisabled: () => boolean,
+  isBackButtonDisabled: () => boolean,
 }
 
 export default IQuestionsProps;
